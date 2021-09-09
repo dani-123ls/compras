@@ -139,6 +139,52 @@
                     </tr>
                 </tfoot>
             </table>
+            <br>
+            <h2>Formularios</h2>
+            <!-- form para, label etiquetas de etiquetas para indicarle al usuario lo que yo quiero que el ponga-->
+            <form action="#" method="post"><!--siempre debe ir con un form, ya que me da una estructura muy sólida, por buena práctica, puedo tener varios forms-->
+                <label for="fecha">Fecha</label>
+                
+                <input type="date" name="fecha"/>
+                <br><br><!--mala práctica cuidado!!, mientras ss-->
+                <label for="cliente">Cliente</label><!--lo asocio con el input-->
+                <!--input- es el que me define la etiqueta para recibir información, siempre debe ir acompañado del atributo name -->
+                <input required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
+                <br><br>
+                <label for="cantidad">Cantidad</label><!--number no es el que aparece, sino que debo escribirlo o sino me voy a quedar esperando que funcione-->
+                <input type="number" name="cantidad" placeholder="Escriba la cantidad">
+                <!-- password me coloca la informacion de forma encriptada -->
+                <!-- <label for="usuario">Usuario</label>
+                <input type="password" name="usuario"placeholder="Escriba su usuario" -->
+                <br><br>
+                <label for="envio">Tipo de envio</label>
+                <input type="radio" name="envio" value="N"> Normal<!--N o E me representa lo que selecciono-->
+                <input type="radio" name="envio" value="E"> Express<!-- Al ser el mismo nombre garantizo que solo pueda escoger uno solo a la vez-->
+                <br><br>
+                <label for="">Horario entrega</label>
+                <input type="checkbox" name="horarios[]" value="1">Jornada Mañana<!-- cuando le coloque los [] es para que me trabaje como una lista y me reciba bastante información, varios datos-->
+                <input type="checkbox" name="horarios[]" value="2">Jornada Tarde<!-- debe también tener un value-->
+                <input type="checkbox" name="horarios[]" value="3">Jornada Noche<!-- -->
+                <!--el select -->
+                <!--cuidado con los espacios o nombres, asi mismo con / y < >-->
+                <br><br>
+                <label for="producto">Producto</label>
+                <!-- <select name="producto[]" multipl>multiple, me permite seleccionar varios productos -->
+                <select name="producto">
+                    <option value="-1">Seleccione un producto</option>
+                    <option value="1">Memoria USB</option>
+                    <option value="2">Disco Duro</option>
+                    <option value="3">Mouse</option>
+                    <option value="4">Pantalla LCD</option>
+
+                </select>
+                <br/><br/>
+                <label for="observaciones">observaciones</label>
+                <textarea name="oservaciones"  cols="30" rows="10"></textarea><!--text are-->
+
+
+            </form><!-- atributo placeholder me permite ponerle mensajes de ayuda al usuario o la persona-->
+                    <!--required me obliga a que si o si responda el formulario, que no este vacío -->
         </main>
         <footer>
             <!-- pie de página -->
