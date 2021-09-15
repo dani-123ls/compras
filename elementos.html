@@ -31,6 +31,14 @@
             
             <nav>
                 <!-- Menús o iconos -->
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>   
+                    <li>
+                    <a href="otra.html">Otra</a>
+                    </li>
+                </ul>
             </nav>
         </header>
         <aside>
@@ -152,7 +160,7 @@
                 <input required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
                 <br><br>
                 <label for="cantidad">Cantidad</label><!--number no es el que aparece, sino que debo escribirlo o sino me voy a quedar esperando que funcione-->
-                <input type="number" name="cantidad" placeholder="Escriba la cantidad">
+                <input  type="number" name="cantidad" placeholder="Escriba la cantidad">
                 <!-- password me coloca la informacion de forma encriptada -->
                 <!-- <label for="usuario">Usuario</label>
                 <input type="password" name="usuario"placeholder="Escriba su usuario" -->
@@ -171,7 +179,7 @@
                 <label for="producto">Producto</label>
                 <!-- <select name="producto[]" multipl>multiple, me permite seleccionar varios productos -->
                 <select name="producto">
-                    <option value="-1">Seleccione un producto</option>
+                    <option value="-1">Seleccione un producto</option><!--similar a las listas-->
                     <option value="1">Memoria USB</option>
                     <option value="2">Disco Duro</option>
                     <option value="3">Mouse</option>
@@ -180,8 +188,17 @@
                 </select>
                 <br/><br/>
                 <label for="observaciones">observaciones</label>
-                <textarea name="oservaciones"  cols="30" rows="10"></textarea><!--text are-->
-
+                <textarea  placeholder="Escriba si tiene alguna observación" name="oservaciones"  cols="40" rows="5"></textarea><!--text area etiqueta que abre y cierra,puedo modificar su tamaño con rows y cols-->
+                <!-- <input type="range"name="rango" value="50"> -->
+                <br><br>
+                <input type="button" name="boton" value="Botón"><!-- 1 forma-->
+                <button type="button" name="boton2">Botón</button><!--2 forma, etiqueta-->
+                <br><br>
+                <input type="reset" value="Resetear"><!--solo sirve dentro del form, muy importante, me reseta todo lo registrado en un formulario-->
+                <button type="reset">Resetear </button><!--2 forma-->
+                <br><br>
+                <input type="submit" name="enviar" value="Enviar">
+                <button>Enviar</button><!--no se le coloca el tipo, ya que por defecto es submit-->
 
             </form><!-- atributo placeholder me permite ponerle mensajes de ayuda al usuario o la persona-->
                     <!--required me obliga a que si o si responda el formulario, que no este vacío -->
