@@ -11,6 +11,9 @@
            
             <!-- <link rel= etiqueta está incompleto, debo giarme con la imagen, basicamente es para los iconos de las paginas web, por ejemplo, el que aparece en la esquina superior isquierda, icono chrome,github, one drive, etc -->
             <link rel="shortcut icon" href="http://lineadecodigo.com/wp-content/uploads/2006/11/html.png" type="image/x-icon"> <!-- coloco el icono de html-->
+            <!--stylesheet estilos-->
+            <link rel="stylesheet" href="CSS/estilos.css">
+        
         </head>
 
     <body>  <!-- cuerpo-->
@@ -20,7 +23,7 @@
             <!-- logo de la página -->
             <!-- que le pueda dar click en la imagen y que me dirija a otra pestaña del sitio que hace referencia, en este caso a la página, utilizo el a para eso-->
             
-            <h1><!-- agrego dentro de la etiqueta para que la imagen y el texto lo coloque al lado-->
+            <h1 class="fondo_naranja"><!-- agrego dentro de la etiqueta para que la imagen y el texto lo coloque al lado-->
                 <a target="_blank"href="https://misiontic2022.unab.edu.co">
                     <img width="180px"src="https://explicaciondigital.com.co/wp-content/uploads/2021/07/misiontic2022-1.jpg"
                     alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
@@ -63,7 +66,7 @@
             <br/> <!-- Para dar un enter, pero no es una buena prácitica-->
 
             <h2>Listas</h2>
-            <h3>Ordenadas</h3>
+            <h3 class="fondo_naranja">Ordenadas</h3>
             <!-- type: para estilo, segun como escoja, por defecto trae numeros, ahora le puse números romanos-->
             <ol type="I"><!-- empiezan por una etiqueta orden list , etiqueta padre-->
                 <li>Local</li><!-- Etiquetas li que deben ir dentro, estas son etiquetas hijas-->
@@ -73,7 +76,7 @@
             <h3>Desordenadas</h3>
             <ul><!-- estas manejan la etiqueta ul y tambien maneja los li, como viñetas-->
                 <li>Normal</li>
-                <li>Express</li>
+                <li class="fondo_naranja">Express</li>
                 <li>
                     <a href="otra.html">Ir a la otra página</a>
                     
@@ -81,7 +84,7 @@
             </ul>
             <br/>
 
-            <h2>Enlaces</h2>
+            <h2 style="background-color: rgb(206, 202, 7);color: black; text-align: start;"class="fondo_naranja" id="titulo_enlaces">Enlaces</h2>
             <!-- target otro atributo para que abra en una pestaña nueva-->
             <a target="_blank" href="https://misiontic2022.unab.edu.co" > Ir a la página de MisiónTic UNAB </a><!--a otra etiqueta, anchor. href es atributo donde coloco el enlace -->
             <a href="otra.html">Ir a la otra página</a>
@@ -112,7 +115,7 @@
                         <!--si dentro de la etiqueta me permite texto, me permitirá cualquier cosa-->
                         <th>Cliente</th>
                         <th>Producto</th>
-                        <th>Cantidad</th>
+                        <th class="fondo_naranja">Cantidad</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -130,7 +133,7 @@
                         <!-- <td>Juan - quito esta, porque la otra ya me está ocupando este espacio</td> -->
                         <td>Memoria USB</td>
                         <td>10</td>
-                        <td>$700000</td>
+                        <td class="fondo_naranja">$700000</td>
                     </tr>
                     <tr>
                         <td>Maria</td>
@@ -157,7 +160,7 @@
                 <br><br><!--mala práctica cuidado!!, mientras ss-->
                 <label for="cliente">Cliente</label><!--lo asocio con el input-->
                 <!--input- es el que me define la etiqueta para recibir información, siempre debe ir acompañado del atributo name -->
-                <input required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
+                <input class="fondo_naranja" required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
                 <br><br>
                 <label for="cantidad">Cantidad</label><!--number no es el que aparece, sino que debo escribirlo o sino me voy a quedar esperando que funcione-->
                 <input  type="number" name="cantidad" placeholder="Escriba la cantidad">
@@ -198,7 +201,7 @@
                 <button type="reset">Resetear </button><!--2 forma-->
                 <br><br>
                 <input type="submit" name="enviar" value="Enviar">
-                <button>Enviar</button><!--no se le coloca el tipo, ya que por defecto es submit-->
+                <button class="fondo_naranja">Enviar</button><!--no se le coloca el tipo, ya que por defecto es submit-->
 
             </form><!-- atributo placeholder me permite ponerle mensajes de ayuda al usuario o la persona-->
                     <!--required me obliga a que si o si responda el formulario, que no este vacío -->
