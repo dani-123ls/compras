@@ -28,9 +28,31 @@ body{
     background-color: rgb(113, 127, 206) ;
 }
 
-a :active{
-color: red;
+a :visited{
+    background-color: green;
+    color:mediumspringgreen;
+}
+
+a :link{
+    color:yellow;
+    font-size: 16pt;
+    
 }
 a:hover{
 color:greenyellow;
 }
+
+th:active{
+    background-color: chocolate;
+}
+#desordenadas li a{
+   background-color: rebeccapurple; 
+   margin-bottom: 8px;
+
+}
+
+/* #desordenadas li {
+    background-color: rebeccapurple; 
+    margin-bottom: 8px;
+ 
+ } */

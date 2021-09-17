@@ -12,8 +12,48 @@
             <!-- <link rel= etiqueta está incompleto, debo giarme con la imagen, basicamente es para los iconos de las paginas web, por ejemplo, el que aparece en la esquina superior isquierda, icono chrome,github, one drive, etc -->
             <link rel="shortcut icon" href="http://lineadecodigo.com/wp-content/uploads/2006/11/html.png" type="image/x-icon"> <!-- coloco el icono de html-->
             <!--stylesheet estilos-->
-            <link rel="stylesheet" href="CSS/estilos.css">
-        
+            <!-- <link rel="stylesheet" href="CSS/estilos.css"> -->
+
+            <style>
+                *{
+                  margin: 0;  
+                  padding: 0;
+                }
+
+                header{
+                   border: 2px solid blue; 
+                }
+                main{
+                    border: 2px solid greenyellow;
+                   
+                    /* margin: 64px  128px 16px 8px ;/*1 valor arriba,derecha, abajo, izquierda-sentido horario */
+                    width: 80%;
+                    margin: 32px auto;
+                    /* margin-top: 32px;
+                    margin-left: auto;
+                    margin-right: auto;*/
+                    padding: 64px;
+                }
+
+               main  h3, a, img{
+                border: 2px solid red;
+                padding: 16px;
+                }
+                footer{
+                    border: 2px solid yellow;
+                    
+
+                }
+                
+                #santander{
+                display:block;
+                }
+                /* proceso a la inversa,para que comparta el espacio */
+                h2{
+                    display: inline;
+                }
+
+            </style>
         </head>
 
     <body>  <!-- cuerpo-->
@@ -73,8 +113,8 @@
                 <li>Nacional</li>
                 <li>Internacional</li>
             </ol>
-            <h3>Desordenadas</h3>
-            <ul><!-- estas manejan la etiqueta ul y tambien maneja los li, como viñetas-->
+            <h3  >Desordenadas</h3>
+            <ul id="desordenadas" ><!-- estas manejan la etiqueta ul y tambien maneja los li, como viñetas-->
                 <li>Normal</li>
                 <li class="fondo_naranja">Express</li>
                 <li>
@@ -91,7 +131,9 @@
 
             <h2>Imágenes</h2><!-- imagen de enlace o descargada-->
             <!-- width para tamaño en ancho de la imagen-->
-            <img width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
+            <!-- Proceso de cambio para que ocupe toda la pantalla dicha etiqueta de santander-->
+            
+            <img id="santander" width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
                   alt= "Envio Local" /> <!-- src - fuente ahí pego el enlace de imagen --> 
                   <!-- buenas practicas que ayudan a los buscadores a encontar mi página      -->
                   <!-- también me ayuda cuando se va el internet o copio mal la dirección y no me carga la imagen -->
