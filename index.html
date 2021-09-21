@@ -38,8 +38,12 @@
         main{
             background-color: bisque;
             text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr 1fr;
             /* grid-column:  2/span 5; */
-            display: inline-block;
+            /* display: inline-block; */
+
             /* margin-left: 8px; separación entre solo algo especifico*/
         }
         footer{
@@ -51,6 +55,14 @@
         footer h1, footer h2, footer h3{
             display: inline-block;
             margin: 0;
+        }
+        /* hace que me hubique los elementos en 3 secciones*/
+        .formulario{
+            grid-column: 2/3;
+            grid-row: 1/span 2;
+        }
+        .tablas table{
+            text-align: center;
         }
     </style>
 
@@ -76,7 +88,7 @@
     </ul>
 
     </nav>
-    <aside>Menú Lateral
+    <aside><!--Menu lateral-->
         <h2>Encabezados</h2><!-- los que empiezan por h, la etiqueta me ocupa todo el espacio, por ende no puedo colocar otra al lado, las imagenes y enlaces no es asi, se trabaja o mejora con ss-->
             <h1>Título</h1>
             <h2>SubTítulo</h2>
@@ -101,17 +113,123 @@
                 </li>
             </ul>
     </aside>
-    <main>Contenido principal
-        <h2>Imágenes</h2><!-- imagen de enlace o descargada-->
-        <!-- width para tamaño en ancho de la imagen-->
-        <!-- Proceso de cambio para que ocupe toda la pantalla dicha etiqueta de santander-->
-        
-        <img id="santander" width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
-              alt= "Envio Local" /> <!-- src - fuente ahí pego el enlace de imagen --> 
-              <!-- buenas practicas que ayudan a los buscadores a encontar mi página      -->
-              <!-- también me ayuda cuando se va el internet o copio mal la dirección y no me carga la imagen -->
-        <img width="256px" src ="img/colombia.webp" 
-        alt= "Envio Nacional"/> <!-- puedo  tambien utilizar el height que es para altura-->
+    <main><!--Contenido principal, organizo con div y class-->
+        <div class="imagenes">
+
+            <h2>Imágenes</h2><!-- imagen de enlace o descargada-->
+            <!-- width para tamaño en ancho de la imagen-->
+            <!-- Proceso de cambio para que ocupe toda la pantalla dicha etiqueta de santander-->
+            
+            <img id="santander" width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
+                  alt= "Envio Local" /> <!-- src - fuente ahí pego el enlace de imagen --> 
+                  <!-- buenas practicas que ayudan a los buscadores a encontar mi página      -->
+                  <!-- también me ayuda cuando se va el internet o copio mal la dirección y no me carga la imagen -->
+            <img width="256px" src ="img/colombia.webp" 
+            alt= "Envio Nacional"/> <!-- puedo  tambien utilizar el height que es para altura-->
+       
+        </div>
+        <div class="Tablas">
+            <h2>Tablas</h2>
+            <!--borde pero lo vamos a trabjar es con ss, puedo configurar la tabla con width o con porcentaje tambien= width="50%"-->
+            <table border="1"><!--tiene 3 etiquetas mas adentro-->
+                <thead> <!--definir la cabecera de la tabla, borde, acciones de diseño-->
+                    <!-- tr para fila,-->
+                    <tr>
+                        <!-- th para celda, 1 para cada celda, me lo coloca en negrita, td no-->
+                        <!--si dentro de la etiqueta me permite texto, me permitirá cualquier cosa-->
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th class="fondo_naranja">Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody><!--contenido de la tabla, siempre va a contener 1 fila-->
+                    <tr>
+                        <!--para que me ocupe dos espacios de fila y solo aparezca un nombre de juan, utilizo rowspan-->
+                        <td rowspan="2">Juan</td>
+                        <td>Mouse</td>
+                        <td>4</td>
+                        <td>$200000</td>
+    
+                    </tr>
+                    <tr>
+    
+                        <!-- <td>Juan - quito esta, porque la otra ya me está ocupando este espacio</td> -->
+                        <td>Memoria USB</td>
+                        <td>10</td>
+                        <td class="fondo_naranja">$700000</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>Disco Duro</td>
+                        <td>2</td>
+                        <td>$240000</td>
+                    </tr>
+                </tbody>
+                <tfoot> <!--si queremos poner un diseño especifico, pie de página, si no voy a totalizar nada, pues lo dejo vacío-->
+                    <tr>
+                        <!-- atributo que tiene la celda para concatenar-colspan, aumenta en columnas -->
+                        <th colspan="3">Total Compras</th>
+                        <th>$1140000</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="formulario">
+            <h2>Formularios</h2>
+            <!-- form para, label etiquetas de etiquetas para indicarle al usuario lo que yo quiero que el ponga-->
+            <form action="#" method="post"><!--siempre debe ir con un form, ya que me da una estructura muy sólida, por buena práctica, puedo tener varios forms-->
+                <label for="fecha">Fecha</label>
+                
+                <input type="date" name="fecha"/>
+                <br><br><!--mala práctica cuidado!!, mientras ss-->
+                <label for="cliente">Cliente</label><!--lo asocio con el input-->
+                <!--input- es el que me define la etiqueta para recibir información, siempre debe ir acompañado del atributo name -->
+                <input class="fondo_naranja" required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
+                <br><br>
+                <label for="cantidad">Cantidad</label><!--number no es el que aparece, sino que debo escribirlo o sino me voy a quedar esperando que funcione-->
+                <input  type="number" name="cantidad" placeholder="Escriba la cantidad">
+                <!-- password me coloca la informacion de forma encriptada -->
+                <!-- <label for="usuario">Usuario</label>
+                <input type="password" name="usuario"placeholder="Escriba su usuario" -->
+                <br><br>
+                <label for="envio">Tipo de envio</label>
+                <input type="radio" name="envio" value="N"> Normal<!--N o E me representa lo que selecciono-->
+                <input type="radio" name="envio" value="E"> Express<!-- Al ser el mismo nombre garantizo que solo pueda escoger uno solo a la vez-->
+                <br><br>
+                <label for="">Horario entrega</label>
+                <input type="checkbox" name="horarios[]" value="1">Jornada Mañana<!-- cuando le coloque los [] es para que me trabaje como una lista y me reciba bastante información, varios datos-->
+                <input type="checkbox" name="horarios[]" value="2">Jornada Tarde<!-- debe también tener un value-->
+                <input type="checkbox" name="horarios[]" value="3">Jornada Noche<!-- -->
+                <!--el select -->
+                <!--cuidado con los espacios o nombres, asi mismo con / y < >-->
+                <br><br>
+                <label for="producto">Producto</label>
+                <!-- <select name="producto[]" multipl>multiple, me permite seleccionar varios productos -->
+                <select name="producto">
+                    <option value="-1">Seleccione un producto</option><!--similar a las listas-->
+                    <option value="1">Memoria USB</option>
+                    <option value="2">Disco Duro</option>
+                    <option value="3">Mouse</option>
+                    <option value="4">Pantalla LCD</option>
+
+                </select>
+                <br/><br/>
+                <label for="observaciones">observaciones</label>
+                <textarea  placeholder="Escriba si tiene alguna observación" name="oservaciones"  cols="40" rows="5"></textarea><!--text area etiqueta que abre y cierra,puedo modificar su tamaño con rows y cols-->
+                <!-- <input type="range"name="rango" value="50"> -->
+                <br><br>
+                <input type="button" name="boton" value="Botón"><!-- 1 forma-->
+                <button type="button" name="boton2">Botón</button><!--2 forma, etiqueta-->
+                <br><br>
+                <input type="reset" value="Resetear"><!--solo sirve dentro del form, muy importante, me reseta todo lo registrado en un formulario-->
+                <button type="reset">Resetear </button><!--2 forma-->
+                <br><br>
+                <input type="submit" name="enviar" value="Enviar">
+                <button class="fondo_naranja">Enviar</button><!--no se le coloca el tipo, ya que por defecto es submit-->
+
+            </form>
+        </div>
         <!-- nombre carpeta, / entro , para subir desde mi pc es mejor no manejar mayusculas ni espacios -->
         
          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_KQ0elrksW4" title="YouTube video player" frameborder="0" 
@@ -119,52 +237,7 @@
        
         <!--Html 5, no está funcionando, falta algo-->
         <!-- <video width="356" height="356" src="https://www.youtube.com/embed/_KQ0elrksW4"></video>  -->
-        
-        <h2>Tablas</h2>
-        <!--borde pero lo vamos a trabjar es con ss, puedo configurar la tabla con width o con porcentaje tambien= width="50%"-->
-        <table border="1"><!--tiene 3 etiquetas mas adentro-->
-            <thead> <!--definir la cabecera de la tabla, borde, acciones de diseño-->
-                <!-- tr para fila,-->
-                <tr>
-                    <!-- th para celda, 1 para cada celda, me lo coloca en negrita, td no-->
-                    <!--si dentro de la etiqueta me permite texto, me permitirá cualquier cosa-->
-                    <th>Cliente</th>
-                    <th>Producto</th>
-                    <th class="fondo_naranja">Cantidad</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody><!--contenido de la tabla, siempre va a contener 1 fila-->
-                <tr>
-                    <!--para que me ocupe dos espacios de fila y solo aparezca un nombre de juan, utilizo rowspan-->
-                    <td rowspan="2">Juan</td>
-                    <td>Mouse</td>
-                    <td>4</td>
-                    <td>$200000</td>
 
-                </tr>
-                <tr>
-
-                    <!-- <td>Juan - quito esta, porque la otra ya me está ocupando este espacio</td> -->
-                    <td>Memoria USB</td>
-                    <td>10</td>
-                    <td class="fondo_naranja">$700000</td>
-                </tr>
-                <tr>
-                    <td>Maria</td>
-                    <td>Disco Duro</td>
-                    <td>2</td>
-                    <td>$240000</td>
-                </tr>
-            </tbody>
-            <tfoot> <!--si queremos poner un diseño especifico, pie de página, si no voy a totalizar nada, pues lo dejo vacío-->
-                <tr>
-                    <!-- atributo que tiene la celda para concatenar-colspan, aumenta en columnas -->
-                    <th colspan="3">Total Compras</th>
-                    <th>$1140000</th>
-                </tr>
-            </tfoot>
-        </table>
         
     </main>
     <footer>pie de página
