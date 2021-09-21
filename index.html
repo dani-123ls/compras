@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Compras</title>
+
+    <style>
+        body{
+            background-color: lightgreen;
+            display: grid;/* va a ser mi container*/
+            grid-template-columns: 1fr 5fr;
+            /* grid-template-columns: repeat(6, 1fr);me repeti esos fr 6 veces */
+            grid-template-rows: 80px 2.5rem 1fr 32px;
+            grid-auto-rows: 556px;/* para las filas autogeneradas*/
+            /* grid-auto-flow: dense; */
+            /* gap: 16px; */
+            height: 100vh;
+            }
+        header{
+            background-color: lime;
+            grid-column: 1 /  3 ;/*se lo podemos aplicar porque son grid items*/
+        }
+        nav{
+            background-color: maroon;
+            grid-column: 1/ span 2;
+            text-align: center;
+        }
+        nav li{
+            display: inline-block;
+        }
+        aside{
+            background-color: mediumslateblue;
+            display: inline-block;
+            /* margin-right: 8px; */
+        }
+        main{
+            background-color: bisque;
+            text-align: center;
+            /* grid-column:  2/span 5; */
+            display: inline-block;
+            /* margin-left: 8px; separación entre solo algo especifico*/
+        }
+        footer{
+            background-color: orange;
+            grid-column: 1/ 3;
+            text-align: center;
+            padding: 16px;
+        }
+        footer h1, footer h2, footer h3{
+            display: inline-block;
+            margin: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1 class="fondo_naranja"><!-- agrego dentro de la etiqueta para que la imagen y el texto lo coloque al lado-->
+            <a target="_blank"href="https://misiontic2022.unab.edu.co">
+                <img width="180px"src="https://explicaciondigital.com.co/wp-content/uploads/2021/07/misiontic2022-1.jpg"
+                alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
+            </a>
+            Página de Elementos HTML
+
+        </h1> <!--h1- manejo de titulos -->
+    </header>
+    <nav> <ul>
+        <li>
+            <a href="#">Inicio</a>
+        </li>   
+        <li>
+        <a href="otra.html">Otra</a>
+        </li>
+    </ul>
+
+    </nav>
+    <aside>Menú Lateral
+        <h2>Encabezados</h2><!-- los que empiezan por h, la etiqueta me ocupa todo el espacio, por ende no puedo colocar otra al lado, las imagenes y enlaces no es asi, se trabaja o mejora con ss-->
+            <h1>Título</h1>
+            <h2>SubTítulo</h2>
+            <h3>Título</h3>
+            <br/> <!-- Para dar un enter, pero no es una buena prácitica-->
+
+            <h2>Listas</h2>
+            <h3 class="fondo_naranja">Ordenadas</h3>
+            <!-- type: para estilo, segun como escoja, por defecto trae numeros, ahora le puse números romanos-->
+            <ol type="I"><!-- empiezan por una etiqueta orden list , etiqueta padre-->
+                <li>Local</li><!-- Etiquetas li que deben ir dentro, estas son etiquetas hijas-->
+                <li>Nacional</li>
+                <li>Internacional</li>
+            </ol>
+            <h3  >Desordenadas</h3>
+            <ul id="desordenadas" ><!-- estas manejan la etiqueta ul y tambien maneja los li, como viñetas-->
+                <li>Normal</li>
+                <li class="fondo_naranja">Express</li>
+                <li>
+                    <a href="otra.html">Ir a la otra página</a>
+                    
+                </li>
+            </ul>
+    </aside>
+    <main>Contenido principal
+        <h2>Imágenes</h2><!-- imagen de enlace o descargada-->
+        <!-- width para tamaño en ancho de la imagen-->
+        <!-- Proceso de cambio para que ocupe toda la pantalla dicha etiqueta de santander-->
+        
+        <img id="santander" width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
+              alt= "Envio Local" /> <!-- src - fuente ahí pego el enlace de imagen --> 
+              <!-- buenas practicas que ayudan a los buscadores a encontar mi página      -->
+              <!-- también me ayuda cuando se va el internet o copio mal la dirección y no me carga la imagen -->
+        <img width="256px" src ="img/colombia.webp" 
+        alt= "Envio Nacional"/> <!-- puedo  tambien utilizar el height que es para altura-->
+        <!-- nombre carpeta, / entro , para subir desde mi pc es mejor no manejar mayusculas ni espacios -->
+        
+         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_KQ0elrksW4" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  youtube-->
+       
+        <!--Html 5, no está funcionando, falta algo-->
+        <!-- <video width="356" height="356" src="https://www.youtube.com/embed/_KQ0elrksW4"></video>  -->
+        
+        <h2>Tablas</h2>
+        <!--borde pero lo vamos a trabjar es con ss, puedo configurar la tabla con width o con porcentaje tambien= width="50%"-->
+        <table border="1"><!--tiene 3 etiquetas mas adentro-->
+            <thead> <!--definir la cabecera de la tabla, borde, acciones de diseño-->
+                <!-- tr para fila,-->
+                <tr>
+                    <!-- th para celda, 1 para cada celda, me lo coloca en negrita, td no-->
+                    <!--si dentro de la etiqueta me permite texto, me permitirá cualquier cosa-->
+                    <th>Cliente</th>
+                    <th>Producto</th>
+                    <th class="fondo_naranja">Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody><!--contenido de la tabla, siempre va a contener 1 fila-->
+                <tr>
+                    <!--para que me ocupe dos espacios de fila y solo aparezca un nombre de juan, utilizo rowspan-->
+                    <td rowspan="2">Juan</td>
+                    <td>Mouse</td>
+                    <td>4</td>
+                    <td>$200000</td>
+
+                </tr>
+                <tr>
+
+                    <!-- <td>Juan - quito esta, porque la otra ya me está ocupando este espacio</td> -->
+                    <td>Memoria USB</td>
+                    <td>10</td>
+                    <td class="fondo_naranja">$700000</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>Disco Duro</td>
+                    <td>2</td>
+                    <td>$240000</td>
+                </tr>
+            </tbody>
+            <tfoot> <!--si queremos poner un diseño especifico, pie de página, si no voy a totalizar nada, pues lo dejo vacío-->
+                <tr>
+                    <!-- atributo que tiene la celda para concatenar-colspan, aumenta en columnas -->
+                    <th colspan="3">Total Compras</th>
+                    <th>$1140000</th>
+                </tr>
+            </tfoot>
+        </table>
+        
+    </main>
+    <footer>pie de página
+        <h2>Encabezados</h2><!-- los que empiezan por h, la etiqueta me ocupa todo el espacio, por ende no puedo colocar otra al lado, las imagenes y enlaces no es asi, se trabaja o mejora con ss-->
+        <h1>Título</h1>
+        <h2>SubTítulo</h2>
+        <h3>Título</h3>
+    </footer>
+
+    <!-- <header>Encabezados</header>
+    <nav>Navegación</nav>
+    <aside>Menú Lateral</aside>
+    <main>Contenido principal</main>
+    <footer>pie de página</footer> -->
+</body>
+</html>
