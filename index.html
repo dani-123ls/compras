@@ -10,21 +10,27 @@
         body{
             background-color: lightgreen;
             display: grid;/* va a ser mi container*/
-            grid-template-columns: 1fr 5fr;
+            
             /* grid-template-columns: repeat(6, 1fr);me repeti esos fr 6 veces */
-            grid-template-rows: 80px 2.5rem 1fr 32px;
-            grid-auto-rows: 556px;/* para las filas autogeneradas*/
+            grid-template-rows: 5rem 2.5rem max-content max-content 2rem;
+            grid-auto-rows: 16rem;/* para las filas autogeneradas*/
             /* grid-auto-flow: dense; */
             /* gap: 16px; */
             height: 100vh;
             }
         header{
             background-color: lime;
-            grid-column: 1 /  3 ;/*se lo podemos aplicar porque son grid items*/
+            text-align: center;
+           display: grid;
+           grid-template-columns: 1fr 5fr;
+           align-items: center;
+        }
+        header h1{
+            font-size: 1.5rem;
         }
         nav{
             background-color: maroon;
-            grid-column: 1/ span 2;
+            
             text-align: center;
         }
         nav li{
@@ -39,12 +45,64 @@
             background-color: bisque;
             text-align: center;
             display: grid;
-            grid-template-columns: 1fr 1fr ;
-            grid-template-rows: 1fr 1fr;
+            
             /* grid-column:  2/span 5; */
             /* display: inline-block; */
 
             /* margin-left: 8px; separación entre solo algo especifico*/
+        }
+        footer{
+            background-color: orange;
+           
+            text-align: center;
+            padding: 16px;
+        }
+        footer h1, footer h2, footer h3{
+            display: inline-block;
+            margin: 0;
+        }
+        /* hace que me hubique los elementos en 3 secciones: encabezados-listas,imagenes-tablas*/
+       
+
+        /*
+        body{
+            background-color: lightgreen;
+            display: grid;va a ser mi container
+            grid-template-columns: 1fr 5fr;
+            grid-template-columns: repeat(6, 1fr);me repeti esos fr 6 veces
+            grid-template-rows: 80px 2.5rem 1fr 32px;
+            grid-auto-rows: 556px;para las filas autogeneradas
+            grid-auto-flow: dense;
+            gap: 16px;
+            height: 100vh;
+            }
+        header{
+            background-color: lime;
+            grid-column: 1 /  3 ;se lo podemos aplicar porque son grid items
+        }
+        nav{
+            background-color: maroon;
+            grid-column: 1/ span 2;
+            text-align: center;
+        }
+        nav li{
+            display: inline-block;
+        }
+        aside{
+            background-color: mediumslateblue;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        main{
+            background-color: bisque;
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr 1fr;
+            grid-column:  2/span 5;
+            display: inline-block;
+
+            margin-left: 8px; separación entre solo algo especifico
         }
         footer{
             background-color: orange;
@@ -56,24 +114,27 @@
             display: inline-block;
             margin: 0;
         }
-        /* hace que me hubique los elementos en 3 secciones*/
+        hace que me hubique los elementos en 3 secciones: encabezados-listas,imagenes-tablas
         .formulario{
             grid-column: 2/3;
             grid-row: 1/span 2;
         }
         .tablas table{
-            text-align: center;
+            me la centra
+            margin: auto;
         }
+        }
+        */
     </style>
 
 </head>
 <body>
     <header>
+        <a target="_blank"href="https://misiontic2022.unab.edu.co">
+            <img width="180px"src="https://explicaciondigital.com.co/wp-content/uploads/2021/07/misiontic2022-1.jpg"
+            alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
+        </a>
         <h1 class="fondo_naranja"><!-- agrego dentro de la etiqueta para que la imagen y el texto lo coloque al lado-->
-            <a target="_blank"href="https://misiontic2022.unab.edu.co">
-                <img width="180px"src="https://explicaciondigital.com.co/wp-content/uploads/2021/07/misiontic2022-1.jpg"
-                alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
-            </a>
             Página de Elementos HTML
 
         </h1> <!--h1- manejo de titulos -->
