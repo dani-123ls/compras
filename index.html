@@ -12,11 +12,13 @@
             display: grid;/* va a ser mi container*/
             
             /* grid-template-columns: repeat(6, 1fr);me repeti esos fr 6 veces */
-            grid-template-rows: 5rem 2.5rem max-content max-content 2rem;
+            grid-template-rows: 5rem 4rem max-content max-content 2rem;
             grid-auto-rows: 16rem;/* para las filas autogeneradas*/
             /* grid-auto-flow: dense; */
             /* gap: 16px; */
             height: 100vh;
+            row-gap: ;
+
             }
         header{
             background-color: lime;
@@ -24,21 +26,37 @@
            display: grid;
            grid-template-columns: 1fr 5fr;
            align-items: center;
+           justify-items: center;
         }
         header h1{
             font-size: 1.5rem;
+            min-width: none;
+            width: max-content;
         }
         nav{
             background-color: maroon;
-            
             text-align: center;
+        }
+        nav ul{
+            margin: 0;
+            padding: 0;
         }
         nav li{
             display: inline-block;
+            border: 1px solid white;
+            width: 5rem;
+            padding: 1rem;
+            margin: 0.5rem 2rem;
+
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
         }
         aside{
             background-color: mediumslateblue;
-            display: inline-block;
+            padding: 2rem;
+            /* display: inline-block; */
             /* margin-right: 8px; */
         }
         main{
@@ -60,6 +78,12 @@
         footer h1, footer h2, footer h3{
             display: inline-block;
             margin: 0;
+        }
+        @media screen and (min-width:768px) and (max-width:1024px){
+            body{
+                background-color:black;
+            }
+            
         }
         /* hace que me hubique los elementos en 3 secciones: encabezados-listas,imagenes-tablas*/
        
@@ -135,7 +159,7 @@
             alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
         </a>
         <h1 class="fondo_naranja"><!-- agrego dentro de la etiqueta para que la imagen y el texto lo coloque al lado-->
-            Página de Elementos HTML
+            Página de Elementos HTML,hh
 
         </h1> <!--h1- manejo de titulos -->
     </header>
@@ -145,6 +169,7 @@
         </li>   
         <li>
         <a href="otra.html">Otra</a>
+        
         </li>
     </ul>
 
