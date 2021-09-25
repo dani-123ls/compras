@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Compras</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body class="grid grid-cols-1 md:bg-black lg:bg-gray-300 lg:grid-cols-12 gap-4 lg:mx-8 lg:p-4"><!--grid con el framework-->
+    <header class="bg-blue-200 lg:col-span-12"><!--manejo de span-me divide en 2 columnas-->
+        <a target="_blank"href="https://misiontic2022.unab.edu.co">
+            <img width="180px"src="https://explicaciondigital.com.co/wp-content/uploads/2021/07/misiontic2022-1.jpg"
+            alt="MIsiónTIC 2022"><!-- en lugar de texto, coloco la imagen-->
+        </a>
+        <h1 class="bg-blue-900 text-white"> <!-- coloco bg, empiezo el proceso de diseño con talwinds--->
+            Página de Elementos HTML
+
+        </h1> <!--h1- manejo de titulos -->
+    </header>
+    <nav class="bg-purple-400 lg:col-span-12"> 
+        <ul>
+        <li>
+            <a href="#">Inicio</a>
+        </li>   
+        <li>
+        <a href="otra.html">Otra</a>
+        
+        </li>
+    </ul>
+
+    </nav>
+    <aside class="bg-yellow-600 lg:col-span-2"><!--Menu lateral-->
+        <h2>Encabezados</h2><!-- los que empiezan por h, la etiqueta me ocupa todo el espacio, por ende no puedo colocar otra al lado, las imagenes y enlaces no es asi, se trabaja o mejora con ss-->
+            <h1>Título</h1>
+            <h2>SubTítulo</h2>
+            <h3>Título</h3>
+            <br/> <!-- Para dar un enter, pero no es una buena prácitica-->
+
+            <h2>Listas</h2>
+            <h3 class="fondo_naranja">Ordenadas</h3>
+            <!-- type: para estilo, segun como escoja, por defecto trae numeros, ahora le puse números romanos-->
+            <ol type="I"><!-- empiezan por una etiqueta orden list , etiqueta padre-->
+                <li>Local</li><!-- Etiquetas li que deben ir dentro, estas son etiquetas hijas-->
+                <li>Nacional</li>
+                <li>Internacional</li>
+            </ol>
+            <h3  >Desordenadas</h3>
+            <ul id="desordenadas" ><!-- estas manejan la etiqueta ul y tambien maneja los li, como viñetas-->
+                <li>Normal</li>
+                <li class="fondo_naranja">Express</li>
+                <li>
+                    <a href="otra.html">Ir a la otra página</a>
+                    
+                </li>
+            </ul>
+    </aside>
+    <main class="bg-green-400 lg:col-span-10 grid grid-cols-1 lg:grid-cols-2 gap-4"><!--Contenido principal, organizo con div y class-->
+        <div class="imagenes">
+
+            <h2>Imágenes</h2><!-- imagen de enlace o descargada-->
+            <!-- width para tamaño en ancho de la imagen-->
+            <!-- Proceso de cambio para que ocupe toda la pantalla dicha etiqueta de santander-->
+            
+            <img id="santander" width="256px"src="https://i.ytimg.com/vi/rtqtQeWuhdA/maxresdefault.jpg" 
+                  alt= "Envio Local" /> <!-- src - fuente ahí pego el enlace de imagen --> 
+                  <!-- buenas practicas que ayudan a los buscadores a encontar mi página      -->
+                  <!-- también me ayuda cuando se va el internet o copio mal la dirección y no me carga la imagen -->
+            <img width="256px" src ="img/colombia.webp" 
+            alt= "Envio Nacional"/> <!-- puedo  tambien utilizar el height que es para altura-->
+       
+        </div>
+        <div class="Tablas">
+            <h2>Tablas</h2>
+            <!--borde pero lo vamos a trabjar es con ss, puedo configurar la tabla con width o con porcentaje tambien= width="50%"-->
+            <table border="1"><!--tiene 3 etiquetas mas adentro-->
+                <thead> <!--definir la cabecera de la tabla, borde, acciones de diseño-->
+                    <!-- tr para fila,-->
+                    <tr>
+                        <!-- th para celda, 1 para cada celda, me lo coloca en negrita, td no-->
+                        <!--si dentro de la etiqueta me permite texto, me permitirá cualquier cosa-->
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th class="fondo_naranja">Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody><!--contenido de la tabla, siempre va a contener 1 fila-->
+                    <tr>
+                        <!--para que me ocupe dos espacios de fila y solo aparezca un nombre de juan, utilizo rowspan-->
+                        <td rowspan="2">Juan</td>
+                        <td>Mouse</td>
+                        <td>4</td>
+                        <td>$200000</td>
+    
+                    </tr>
+                    <tr>
+    
+                        <!-- <td>Juan - quito esta, porque la otra ya me está ocupando este espacio</td> -->
+                        <td>Memoria USB</td>
+                        <td>10</td>
+                        <td class="fondo_naranja">$700000</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>Disco Duro</td>
+                        <td>2</td>
+                        <td>$240000</td>
+                    </tr>
+                </tbody>
+                <tfoot> <!--si queremos poner un diseño especifico, pie de página, si no voy a totalizar nada, pues lo dejo vacío-->
+                    <tr>
+                        <!-- atributo que tiene la celda para concatenar-colspan, aumenta en columnas -->
+                        <th colspan="3">Total Compras</th>
+                        <th>$1140000</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div  class="formulario lg:col-start-2 lg:row-span-3 lg:col-span-12 lg:row-start-1"><!--framework, división -->
+            <h2>Formularios</h2>
+            <!-- form para, label etiquetas de etiquetas para indicarle al usuario lo que yo quiero que el ponga-->
+            <form action="#" method="post"><!--siempre debe ir con un form, ya que me da una estructura muy sólida, por buena práctica, puedo tener varios forms-->
+                <label for="fecha">Fecha</label>
+                
+                <input type="date" name="fecha"/>
+                <br><br><!--mala práctica cuidado!!, mientras ss-->
+                <label for="cliente">Cliente</label><!--lo asocio con el input-->
+                <!--input- es el que me define la etiqueta para recibir información, siempre debe ir acompañado del atributo name -->
+                <input class="fondo_naranja" required type="text" name="cliente" placeholder="Escriba su nombre"/><!-- atributo value me permite decirle por código que quiero que aparezca, valores por defecto-->
+                <br><br>
+                <label for="cantidad">Cantidad</label><!--number no es el que aparece, sino que debo escribirlo o sino me voy a quedar esperando que funcione-->
+                <input  type="number" name="cantidad" placeholder="Escriba la cantidad">
+                <!-- password me coloca la informacion de forma encriptada -->
+                <!-- <label for="usuario">Usuario</label>
+                <input type="password" name="usuario"placeholder="Escriba su usuario" -->
+                <br><br>
+                <label for="envio">Tipo de envio</label>
+                <input type="radio" name="envio" value="N"> Normal<!--N o E me representa lo que selecciono-->
+                <input type="radio" name="envio" value="E"> Express<!-- Al ser el mismo nombre garantizo que solo pueda escoger uno solo a la vez-->
+                <br><br>
+                <label for="">Horario entrega</label>
+                <input type="checkbox" name="horarios[]" value="1">Jornada Mañana<!-- cuando le coloque los [] es para que me trabaje como una lista y me reciba bastante información, varios datos-->
+                <input type="checkbox" name="horarios[]" value="2">Jornada Tarde<!-- debe también tener un value-->
+                <input type="checkbox" name="horarios[]" value="3">Jornada Noche<!-- -->
+                <!--el select -->
+                <!--cuidado con los espacios o nombres, asi mismo con / y < >-->
+                <br><br>
+                <label for="producto">Producto</label>
+                <!-- <select name="producto[]" multipl>multiple, me permite seleccionar varios productos -->
+                <select name="producto">
+                    <option value="-1">Seleccione un producto</option><!--similar a las listas-->
+                    <option value="1">Memoria USB</option>
+                    <option value="2">Disco Duro</option>
+                    <option value="3">Mouse</option>
+                    <option value="4">Pantalla LCD</option>
+
+                </select>
+                <br/><br/>
+                <label for="observaciones">observaciones</label>
+                <textarea  placeholder="Escriba si tiene alguna observación" name="oservaciones"  cols="40" rows="5"></textarea><!--text area etiqueta que abre y cierra,puedo modificar su tamaño con rows y cols-->
+                <!-- <input type="range"name="rango" value="50"> -->
+                <br><br>
+                <input type="button" name="boton" value="Botón"><!-- 1 forma-->
+                <button type="button" name="boton2">Botón</button><!--2 forma, etiqueta-->
+                <br><br>
+                <input type="reset" value="Resetear"><!--solo sirve dentro del form, muy importante, me reseta todo lo registrado en un formulario-->
+                <button type="reset">Resetear </button><!--2 forma-->
+                <br><br>
+                <input type="submit" name="enviar" value="Enviar">
+                <button class="fondo_naranja">Enviar</button><!--no se le coloca el tipo, ya que por defecto es submit-->
+
+            </form>
+        </div>
+        <!-- nombre carpeta, / entro , para subir desde mi pc es mejor no manejar mayusculas ni espacios -->
+        
+         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_KQ0elrksW4" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  youtube-->
+       
+        <!--Html 5, no está funcionando, falta algo-->
+        <!-- <video width="356" height="356" src="https://www.youtube.com/embed/_KQ0elrksW4"></video>  -->
+
+        
+    </main>
+    <footer class="bg-gray-400 lg:col-span-12">pie de página
+        <h2>Encabezados</h2><!-- los que empiezan por h, la etiqueta me ocupa todo el espacio, por ende no puedo colocar otra al lado, las imagenes y enlaces no es asi, se trabaja o mejora con ss-->
+        <h1>Título</h1>
+        <h2>SubTítulo</h2>
+        <h3>Título</h3>
+    </footer>
+
+    <!-- <header>Encabezados</header>
+    <nav>Navegación</nav>
+    <aside>Menú Lateral</aside>
+    <main>Contenido principal</main>
+    <footer>pie de página</footer> -->
+</body>
+</html>
