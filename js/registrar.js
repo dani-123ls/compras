@@ -1,4 +1,12 @@
 //lógica para compra
+
+ let listaProductos = ["Disco Duro","teclado"];
+
+ alert(listaProductos[1]);//para mostar solo un valor- con su posición
+//me lo muestra de manera diferente- me deja mirar mas detalle, para saber que información hay, existe- no existe
+ listaProductos.push("Mouse");//me agrega ese nuevo elemento a mi lista
+console.log(listaProductos);
+/*
 let cliente = prompt("Escriba el nombre del cliente...");
 let documento = prompt(`Escriba el documento de ${cliente}...`);
 let producto = prompt("Escriba el nombre del producto");
@@ -46,3 +54,4 @@ document.write(`
     </ul>
     <h3>Total valor compra: ${total}</h3>
 `);
+*/
