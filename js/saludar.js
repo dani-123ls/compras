@@ -21,18 +21,29 @@ let extranjero = false;
  let mensaje = "Hola,</br> soy "+nombre+
  " mi correo es "+correo+" tengo, "+edad+ " años";
 
+ //utilizo una función- similar a input en python- para recibir datos del usuario
+nombre= prompt("Escriba su nombre....");
+correo= prompt("Escriba su correo...");//los datos los toma todos como string 
+edad= parseInt(prompt("Escriba su edad..."));//me convierte de string a entero
+altura= parseFloat(prompt("Escriba su altura (metros)... "));
+
+
 let mensaje2 = `Hola, soy ${nombre} mi correo es ${correo}, tengo ${edad} años 
 mido ${altura} metros`;
 
+let variable="variable con let";
 if (edad>mayor){
-    mensaje2+= `, soy mayor de edad`;
-}else if(edad<mayor){
-    mensaje2+= `, soy menor de edad`;
 
-}else{
-    mensaje2+= `, tengo 18`;
+    mensaje2 += `, soy mayor de edad`;
+    }else if(edad<mayor){
+        mensaje2+= `, soy menor de edad`;
+
+    }else{
+        mensaje2+= `, tengo 18`;
 
 }
+
+// alert(variable);
 
 document.write("<h2>"+mensaje2+"</h2>");
 console.log("<h2>"+mensaje+"</h2>");
