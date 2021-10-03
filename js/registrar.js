@@ -62,7 +62,7 @@
                 return `Hola ${nombre} desde función, ${estado}`; //para que me regrese- me devuelve algo
             } 
             //2 forma de definir una función flecha-es uan varible-la puedo pasar como parametro a otra función 
-            const saludar_flecha = (nombre, edad)=>{
+            const saludar_flecha = (nombre, edad)=>{//también se le da el nombre de lambda
                 let estado;
                 if (edad>=18) {
                     estado="Mayor de edad";
@@ -76,8 +76,13 @@
             let mensaje = saludar_abreviado("juan", 25);
             //saludar("Juan");//la llamo- no importa sino le paso el parametro
             // let mensaje = saludar("Juan", 25);//para guardar ese retorno
-            document.write(mensaje);
-            //tener cuidado eso sí
+            document.write(mensaje);//tener cuidado eso sí
+       
+let listaProductos = ["Disco Duro","teclado", "Mouse","Pantalla", "Memoria USB"];//asi los defino
+//  listaProductos.forEach((elemento)=>{//for each- me recibe una función de flecha- que interpreta elementos
+//     document.write(elemento);
+//  });
+
  /*   
 let listaProductos = ["Disco Duro","teclado", "Mouse","Pantalla", "Memoria USB"];//asi los defino
 let valoresProductos = [200000, 100000, 80000, 800000, 50000];
