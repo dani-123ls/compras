@@ -28,6 +28,12 @@ let listaProductos = [producto1, producto2, producto3, producto4, producto5];
 let nombresEnvio = ["Express","Normal"];
 let valoresEnvio = [20000, 10000];
 
+//forma harcodeada apenas inicia el programa
+let listaCompras=[
+    {cliente:"Jose", documento:"72131232", producto:producto5,cantidad:20,
+    envio:1, descuento:100000, total:910000},
+];
+
 const cargarProductos = ()=>{
 
     let select = document.getElementById("productos");
@@ -60,6 +66,26 @@ const agregarCompra = (compra)=>{
 
 };
 
+const cargarCompras = ()=>{
+
+    let tabla = document.getElementById("datos_compras");
+
+    tabla.innerHTML="";
+
+    for (const unaCompra of listaCompras) {// forma mas recomendada para cargar
+        tabla.innerHTML+= `<tr>
+        <td>${unaCompra.cliente} (${unaCompra.documento})</td>
+        <td>${unaCompra.producto.nombre} - $${unaCompra.producto.precio}</td>
+        <td>${unaCompra.cantidad}</td>
+        <td>${nombresEnvio[unaCompra.envio]}</td>
+        <td>$${unaCompra.descuento}</td>
+        <td>$${unaCompra.total}</td>
+        </tr>`;
+    }
+};
+
+cargarCompras();
+
 const procesarInformacion = ()=>{//FUNCIÓN FLECHA
     
     let formulario = document.getElementById("form_compra");//trayendo todo el elemento de código
@@ -76,7 +102,7 @@ const procesarInformacion = ()=>{//FUNCIÓN FLECHA
     compra.total =0;
     compra.descuento=0;
 
-    let subtotal = compra.producto.precio *compra.cantidad;
+    let subtotal = compra.producto.precio*compra.cantidad;
     let valorEnvio=0;
     
     
@@ -102,5 +128,7 @@ const procesarInformacion = ()=>{//FUNCIÓN FLECHA
     
     formulario.reset();//me limpia todos los valores
 
-    agregarCompra(compra);//llamo esa función y aquí se lo estoy pasando al botón agregar, para que me agregue cada vez que le de click
-}
+    // agregarCompra(compra);//llamo esa función y aquí se lo estoy pasando al botón agregar, para que me agregue cada vez que le de click
+    listaCompras.push(compra);
+    cargarCompras();//de esta manera puedo colocarle compras precargadas
+};
